@@ -1,0 +1,329 @@
+# 파이썬 객체지향? 
+왜 필요한가? -> 파이토치를 하기 위해서는 필요하다.
+
+# 파이썬 언어의 특징
+
+-3가지 방식의 프로그래밍 가능
+- 상황에 따라 선택가능함
+- 편한 반면에 다른 형태의 프로그래밍 방법은 별도로 배워야 함
+
+-스크립트 형태의 실행(line-by-line execution)
+-함수 형태의 실행(C나 자바스크립트와유사한 형태-모든 것을 함수화/시작은 main()= 대부분 언어가 공통)
+-클래스 형태의 정의(C++/Java와 유사한 OOP형태)
+- 파이토치(PyTorch)는 OOP스타일로 정의해야 함(필수!!!)
+
+# 프로그래밍 언어의 흐름
+- Basic -> Fortran/Cobol -> Pascal/C -> C++ -> Java / C# -> Scala
+
+- 절차적언어(80’s)-> 객체지향언어(90’s) -> 함수형언어(10’s)
+
+# 프로그래밍 언어의 흐름
+
+-절차적언어
+- Algol
+
+-객체지향언어
+- Smalltalk
+
+-함수형언어
+- Hope
+
+# 프로그래밍 언어의 흐름
+
+-절차적(Procedual) 언어
+- 위에서 아래로 수행 / 함수를 호출하면 정지(block)되었다 결과값을
+리턴하면 다시 수행되는 구조
+- 함수의 흐름이 간단하고 구조화(Structured)되어 읽기 쉽다.
+- 구조화(Structured) / 모듈러(Modular) 프로그래밍
+- C / Pascal
+
+-객체지향언어 
+- 오브젝트를 기반으로 메소드를 호출하는 형태로 수행됨
+- 클래스를 기반으로 오브젝트를 생성
+- C++ / Java / C#
+
+-함수형언어
+- 함수의 인자로 함수를 넘길 수 있다
+		
+        예전엔 물건 살때 현금 or 카드만 온리 가능했는데 요즘에는 쪼개서 카드 얼마, 포인트 얼마 이렇게 결제 가능
+- 람다연산
+- 코드는 짧지만 난해
+- Scala, Haskel, ...
+- Javascript/Python/Java8
+
+# C 예제코드
+
+			#include <stdio.h>
+            int main(void)
+            {
+            printf("hello, world\n");
+            }
+
+# 절차적 언어의 특징과 장단점
+
+-코드가 순차적으로 실행(위에서 아래로)
+-서브루틴/함수를 사용
+
+### -장점
+- 코드의 가독성(Readability) 향상
+- 함수 호출시 정지(block)되었다 리턴되면 실행
+- 블럭({ })을 사용
+
+### -단점
+-	전역변수(Global variable) 문제로 소프트웨어위기(Software Crisis) 문제
+야기
+-요구분석/설계/개발/디버깅 중 디버깅시간이 계속 늘어나는 현상
+-디버깅 시간이 눈덩이처럼 커짐( 워치포인트?= 변)
+-큰 프로젝트를 만들때 문제
+
+함수가 너무 많아서 문제임
+
+-해결책 -> 객체지향기술
+
+
+# 객체지향(OO:Object-oriented)
+-객체지향언어란
+- C와 같은 Function-oriented 언어의 발전형
+- 오브젝트를 클래스기반으로 먼저 만들고 내장된 메소드를 호출해서
+원하는 작업을 수행한다.
+
+-참조
+- Object
+-사물(오브젝트)를 가리킴
+- Oriented
+-중심(cetric), 기반(based)
+
+# 객체지향(OO:Object-oriented)의 특징
+
+-캡슐화(Encapsulation) = 디버깅에서 엄청 중요!!, 디버깅 대상을 빨리 찾게해줌
+- 클래스의 필드/속성(field) 값을 private으로 정의하고 이를 접근하려면
+public한 getter/setter(accessor)를 통해 접근하는 형식으로 사용
+- 정보은닉(Information hiding)
+- 소프트웨어 위기의 해결책
+
+예시 : 코로나 초기 동선분석 기지국 대신 qr코드 쓰는거. qr코드로 찾으면 동시간대 사람들 파악 쉽게
+전역변수를 건드리면 다 뒤져야하는데, 아무나 못 건드르게 캡슐화, 
+
+-상속(Inheritance) 
+- 기존의 코드를 상속받는 형태로 부모클래스의 코드에 기능 추가/수정할 수
+있는 기술
+- 소스레벨 코드 재사용(source-level code reuse)
+- 코드없이 재활용되는 것은 아니다.
+- 그런데 소스 코드를 못 구하면 생각보다 중요하지 않더라. 코드를 못 구하고, 못 만들면 재활용의 한계!
+
+그래서 소스 코드 없이, 컴파일 된 상태에서 코드없이 재활용되는 기술 = 컴포넌트
+
+# 객체지향 기술의 발전(1990-> 2022)
+
+- 컴포넌트 : 바이너리된 재사용?
+
+OOP -> 컴포넌트(Component) -> “분산” 컴포넌트(스프링)
+
+서비스기반 아키텍처 (SOA:Service Oriented Architecture) ->
+
+마이크로 서비스 아키텍처 (MSA:Micro-service Architecture) -> 스프링 MSA
+
+OOP -> MVC(Model/View/Controller) 아키텍처 -> DI(Dependency Injection) 
+
+# 객체지향 오브젝트 생성 4단계
+
+일반적으로 4단계를 거쳐서 객체를 만든다.
+
+1. Class Define(클래스 정의)
+class A {
+ private int value; // 캡슐화
+ sample() { … }
+}
+
+2. Object Declare(오브젝트 선언 ; 결혼식에서 혼인선언하고 실제로 혼인신고 안한거)
+A a;
+
+3. Object Instantiate(메모리에 인스턴스 생성 ; 실제로 메모리에 만드는거)
+a = new A();
+
+4. Method Invoke(메소드 호출)
+a.sample();
+
+# 클래스/오브젝트/생성자란?
+
+- 사용자가 자기 직접 정의한 타입(데이터+코드)
+cf. 상속 -> 단일/다중
+ A a = new A();
+ a.setValue(10); // 캡슐화-setter
+ print(a.getValue()); // 캡슐화-getter
+ A a = new A(10); // 오브젝트 초기화 -> 생성자(constructor), new가 되면서 자동으로
+호출
+ // _ _init_ _(python), A() (클래스명과 동일한 메소드-자바)
+ print(a.getValue()); // 10
+
+# 클래스 해설1
+
+    class NeuralNetwork extends nn.Module { // 상속
+     flatten; // 필드(캡슐화)
+     linear_relu_stack; // 필드
+
+     __init__ { … } // 생성자(constructor)
+     forward() { … } // 전파(forward)용 메소드
+     }
+    NeuralNetwork model = new NeuralNetwork() // 오브젝트 생성 및 메소드체이닝
+    model.to(device)
+
+# 클래스 해설2
+ 클래스는 필드와 메소드로 구성
+ 
+    class Sample {
+     private int value; // 필드 : 변수
+     public getValue() { … } //메소드(캡슐화) : 함수
+     public setValue() { …. }
+    }
+    class NeuralNetwork { // 필드 2개, 메소드 2개(생성자, forward)
+     flatten; // 필드
+     linear_relu_stack; // 필드
+    … 
+
+
+# 데이터사이언스 스쿨 - 파이썬 객체지향 
+변수나 함수는 멤버(member) 또는 속성(attribute)이라고 한다. 암튼 같은 뜻
+
+### 객체지향을 사용하지 않고 파이썬으로 구현하면 다음과 같다.
+
+    h = 10         ----> 전역변수
+    v = 20
+
+
+    def area(h, v):  ----> 로컬변수
+        return h * v
+
+
+    a = area(h, v)
+    print(a)
+    
+ 두 줄만 함수
+ 
+ 
+ # 객체지향방식
+ 
+    class Rectangle(object):   --> 클래스명은 대문자로 시작! 파스칼 
+    
+    	def __init__(self, h, v): 기본 생
+            self.h = h
+            self.v = v
+    	def area(self):
+            return self.h * self.v
+            
+
+이 부분을 클래스 구현이라고 한다.
+
+      r = Rectangle(10, 20)
+      a = r.area()
+      print(a)
+위 프로그램에서 r이 바로 객체이다. = 오브젝트 선언 / 인스턴스 생성 / 호출
+
+----------
+
+_ _init _ _ 생성자(생성자)
+ 
+ A a = new A(); 인자가 하나도 없는 생성자, 기본 생성자
+   
+ def __init__(self):  .... 이게 기본 생성자
+ 
+ new A(10,20); 로 하면
+ 
+-------
+
+# 클래스
+
+예제에서 Rectangle은 클래스이고 r은 Rectangle 클래스로 만들어진 객체이다. 객체와 클래스의 관계는 “붕어빵”과 “붕어빵을 굽는 틀”에 비유할 수 있다. 즉, 정해진 속성, 여기에서는 가로 길이 h와 세로 길이 v라는 속성을 가지도록 사각형 클래스를 한 번 만들어 놓으면 이 속성을 가지는 실제 사각형은 얼마든지 많이 만들 수 있다.
+
+    a = Rectangle(1, 1)   # 가로 1, 세로 1인 사각형
+    b = Rectangle(2, 1)   # 가로 2, 세로 1인 사각형
+    c = Rectangle(4, 2)   # 가로 4, 세로 2인 사각형
+    d = Rectangle(6, 3)   # 가로 6, 세로 3인 사각형
+    e = Rectangle(8, 5)   # 가로 8, 세로 5인 사각형
+    
+# 생성자
+
+파이썬에서 클래스를 정의하는 문법은 다음과 같다.
+
+
+    class 클래스이름(object):
+    def __init__(self, 속성값1, 속성값2, 속성값3):
+        self.속성이름1 = 속성값1
+        self.속성이름2 = 속성값2
+        self.속성이름3 = 속성값3
+
+
+이때 속성값 인수는 필요하지 않다면 없어도 된다. 여기에서 class 블럭 안에 정의된 __init__란 함수는 생성자(constructor)라고 하며 클래스 정의에서 가장 중요한 함수이다.
+
+객체를 생성할 때는 클래스이름을 함수처럼 호출해야 하는데, 이때 실제로는 __init__로 정의된 생성자 함수가 호출된다. 생성자 함수 내부에서는 생성자를 호출할 때 넣은 입력 변수, 즉 인자의 값을 속성값으로 저장한다.
+
+# 상속
+자바
+ RoundRectangle extends Rectangle ---> 일반적인 사각형을 상속받아서 라운드렉텡글을 만들겠다. extends는 상속!!
+ 
+ 파이썬 
+ class RoundRetangle(Retangle) --> 그냥 상속을 받겠다 = 괄호에 클래스만
+  
+  - 부모클래스의 모든 필드/메소드를 상속받음
+  - 부모와 다른 필드 / 메소드를 추가/변경 가능
+  - 그러면 어떻게 구별하지? this / super
+
+### 상속의 예
+
+    class NeuralNetwork(nn.Module):
+     def __init__(self):
+     super(NeuralNetwork, self).__init__()
+     self.flatten = ...
+     self.linear_relu_stack = ...
+    
+    a = NeuralNetwork()
+    print(a.flatten)
+    print(a.linear_relu_stack)
+ 		
+ 
+ 
+ 1. nn.모듈이라는 클래스를 상속받아서 NeuralNetwork라는 클래스를 만든다.
+ nn.module이 부모이고 NeuralNetwork가 자식임. 
+ 그리고 NeuralNetwork는 생성자가 정의되는데 인자가 셀프밖에 없으니 기본생성자임.
+ 그러면 밑에 a = NeuralNetwork() 괄호가 되면 자기의 생성자가 호출이 되는거고, 인자 없는 생성자가 호출이 되니까 그 안에서 부모클래스, nn.module의 생성자 (super)를 호출하고.
+ self.linear_relu_stack 같은 필드가 채워진다.
+ 
+ 2. 생성자 안에 super(부모 클래스의 생성자, 이닛메서드를 호출하라) = 자식의 생성자가 불리면 부모 클래스의 메서드, 이닛을 호출하라
+ 3. 플래튼이라는 필드값이 있는데 뒤의 값으로 채워라
+ 
+ 결국 : nn.module을 상속받아서 부모 클래스 생성자를 호출해주고 나서 필드 두 개를 자동으로 채우는데, 이 채운값을 기준으로 코드를 계속 만들어간다.
+ 
+# 생성자(this/super) 란?
+
+class A extends B { … }
+ B를 상속한 A
+ 
+- 자식클래스의 생성자(this()) -> 부모클래스의 생성자(super())
+
+상속을 받으면 자식꺼다!! 자식꺼는 this 부모한테 받은꺼까지는 super(부모 클래스의 생성자)
+
+# 오버리딩
+
+오버로딩이란? 동일한 이름의 메서드가 여러번 정의되는 것, 같은 메서드가 인수의 자료형이나 개수를 구별해서 다르게 받을 수 있는 것을 말한다.
+
+# 오버라이딩
+
+메서드 오버라이딩(Method Overriding)이란, 상속관계에서 여러 클래스에 걸쳐서 같은 이름의 메서드를 만드는 것이다.
+
+this.attack
+super.attak 
+
+이렇게 구분할 수 있다.
+상속관게에서 부모 매서드와 같은 메서드를 정의하면 오버라이딩했다.
+암튼
+### this, super 둘 다 내꺼임. 
+
+생성자 init은 오버라이딩이 되나? = 메서드니까 가능
+
+# 오늘 정리
+
+객체지향은 뭔가? 캡슐화와 상속
+객체지향 4단계 -> 파이썬과 자바 다르다.
+상속도 다르다.
+상속 과정에서 오버라이딩.
+오버리딩은 
